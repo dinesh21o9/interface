@@ -1,0 +1,136 @@
+body{
+  background-color: rgba(8, 203, 203, 0.23);
+  font-family: 'League Spartan', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: rgba(8, 203, 203, 0.23);
+  padding: 20px;
+  text-align: center;
+}
+
+.header__title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.search-input {
+  font-size: large;
+  width: 60%;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+button:focus,
+input[type=button]:focus {
+  background-color: aliceblue;
+  outline: none;
+} 
+
+.search-icon {
+  size: 50%;
+  /* background-color: black; */
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(98, 98, 98);
+  opacity: 1; /* Firefox */
+  font-weight: 400;
+}
+
+.main-container{
+  position: relative;
+  justify-content: center;
+}
+
+.card{
+  /* width: 60%; */
+  margin: 2.5%;
+  padding: 2%;
+  border: none;
+  border-radius: 10px;
+}
+
+
+
+/* pagination */
+
+.pagination {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 2px;
+}
+
+.pagination .page-item {
+  margin: 0 5px;
+}
+
+.pagination .page-item .page-link {
+  border: none;
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+  
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #f5f5f5;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination .page-link .arrow {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.pagination .page-link .arrow.left {
+  background-image: url("./assets/left-arrow.png"); 
+}
+
+.pagination .page-link .arrow.right {
+  background-image: url("./assets/right-arrow.png"); 
+}
