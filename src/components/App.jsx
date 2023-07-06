@@ -1,9 +1,7 @@
 import React from "react";
 import SearchBar from "./Search-bar";
 import Header from "./Header";
-import Card from "./Card";
-import data from "../data"
-import Example from "./example";
+import Cards_paginated from "./Cards_paginated";
 
 function App() {
   return (
@@ -12,13 +10,11 @@ function App() {
 
       <SearchBar />
 
-      <div class="card-container">
-        <ul>
-          {data.map((prop) => (<Card  heading={prop.type} description={prop.content} date={prop.date} link={prop.link} />) )}
-        </ul>
-      </div>
+      {/* <ul>
+        {data.map((prop) => <Card  heading = {prop.heading} description = {prop.description} link = {prop.link} date = {prop.date} /> )}
+      </ul> */}
 
-      {/* <Example /> */}
+      <Cards_paginated />
 
     </div>
   );

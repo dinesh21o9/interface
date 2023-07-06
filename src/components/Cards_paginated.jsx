@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Pagination from './pagination';
-import Card from './Card'; 
+import Card from './Card';
 import data from '../data';
 
 const Example = () => {
+  
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 2; //No of cards per page
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -13,24 +14,30 @@ const Example = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
-  // Check if data is defined and has length greater than 0
-  const currentData = data && data.length > 0 ? data.slice(indexOfFirstItem, indexOfLastItem) : [];
+  const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div>
-      <h1>Pagination Example</h1>
-      <div className="card-container">
-        <ul>
-            {currentData.map((props) => ( <Card  heading={props.type} description={props.content} date={props.date} link={props.link} /> ))}
-        </ul>
-      </div>
+
       <Pagination
         itemsPerPage={itemsPerPage}
-        totalItems={data ? data.length : 0}
+        totalItems={data.length}
         currentPage={currentPage}
         paginate={paginate}
       />
+      <ul>
+        {currentData.map((prop) => (
+          <Card
+            heading={prop.heading}
+            description={prop.description}
+            summary = {prop.summary}
+            link={prop.link}
+            date={prop.date}
+          />
+        ))}
+      </ul>
+
+      
     </div>
   );
 };

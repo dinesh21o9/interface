@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-const Pagination = ({ itemsPerPage, elements, currentPage, paginate }) => {
+const Pagination = ({ itemsPerPage, totalItems, currentPage, paginate }) => {
   const [activePage, setActivePage] = useState(currentPage);
 
-  const totalItems = elements.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const handlePageChange = (pageNumber) => {
@@ -25,19 +24,8 @@ const Pagination = ({ itemsPerPage, elements, currentPage, paginate }) => {
     }
   };
 
-  const indexOfLastItem = activePage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentElements = elements.slice(indexOfFirstItem, indexOfLastItem);
-
   return (
     <div>
-      {/* Render your list of elements here using the currentElements array */}
-      <ul>
-        {currentElements.map((element, index) => (
-          <li key={index}>{element}</li>
-        ))}
-      </ul>
-
       <nav>
         <ul className="pagination">
           <li className={`page-item ${activePage === 1 ? 'disabled' : ''}`}>
